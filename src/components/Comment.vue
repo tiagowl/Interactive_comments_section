@@ -1,5 +1,5 @@
 <template>
-    <article :class="['bg-white', 'sm:py-4', 'pb-4', 'px-4', 'sm:pr-20', 'rounded-md',{'sm:w-6/12': type === 'comment','w-11/12': type === 'comment', 'mb-1': type === 'comment', 'sm:ml-9': type === 'subcomment'} ]" >
+    <article :class="['bg-white', 'sm:py-4', 'pb-4', 'px-4', 'sm:pr-20', 'rounded-md',{'sm:w-6/12': type === 'comment','w-11/12': type === 'comment', 'mb-1': type === 'comment', 'sm:ml-9': type === 'subcomment', 'mt-3': type === 'subcomment'} ]" >
       <div class="flex flex-col-reverse sm:flex-row w-full min-h-20 items-start" >
         <div class="flex w-full justify-between items-center" >
           <div class="flex sm:flex-col py-2 items-center mr-4 justify-between rounded-lg w-20 pl-2 pr-2 sm:w-10 sm:h-20 bg-slate-100" >
@@ -60,7 +60,7 @@
             </div>
       </div>
     </article>
-    <div class="mt-3 sm:w-3/6 w-80 pl-7 h-auto" >
+    <div class="sm:w-3/6 w-80 pl-7 h-auto" >
       <slot></slot>
     </div>
     <CommentInput v-if="reply === true" :replyingTo="data.user.username" :superCommentId="commentId" :commentId="data.id" :type="typeComment" />
