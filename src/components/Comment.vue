@@ -60,7 +60,7 @@
             </div>
       </div>
     </article>
-    <div class="sm:w-3/6 w-80 pl-7 h-auto" >
+    <div class="sm:w-3/6 w-11/12 pl-7 h-auto" >
       <slot></slot>
     </div>
     <CommentInput v-if="reply === true" :replyingTo="data.user.username" :superCommentId="commentId" :commentId="data.id" :type="typeComment" />
