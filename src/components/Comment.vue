@@ -34,8 +34,8 @@
             </div>
           </div>
           <div v-if="update === false" class="flex w-11/12" >
-            <p  class="w-max text-xs text-slate-500 mb-3 sm:mb-0" >
-              <span v-if="type === 'subcomment'" class="text-cyan-700 text-xs" >@{{data.replyingTo}}</span>
+            <p  class="w-max text-sm text-slate-500 mb-3 sm:mb-0 sm:text-xs" >
+              <span v-if="type === 'subcomment'" class="text-cyan-700 text-sm sm:text-xs" >@{{data.replyingTo}}</span>
               {{data.content}}
             </p>
           </div>
