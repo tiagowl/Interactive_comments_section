@@ -1,7 +1,7 @@
 <template>
   <Comment v-for="(comment, index) in comments" :data="comment" :commentId="comment.id" :commentIndex="index" :key="comment.id" >
     <div v-if="comment.replies" class="flex w-full h-auto mb-2" >
-        <div class="flex flex-col justify-between h-auto w-full" >
+        <div class="flex flex-col justify-between h-auto w-full border-left-comment pl-3 sm:pl-1">
           <Comment type="subcomment" v-for="(subcomment, subcommentIndex) in comment.replies" :commentId="comment.id" :subCommentIndex="subcommentIndex" :commentIndex="index" :data="subcomment" :key="subcomment.id" />
         </div>
     </div>    
@@ -38,5 +38,9 @@ export default {
     flex-direction: column;
     font-size: 1rem;
     width: 100%;
+    }
+
+    .border-left-comment{
+      border-left: 3px solid #DEDDDD;
     }
 </style>

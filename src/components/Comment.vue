@@ -1,5 +1,5 @@
 <template>
-    <article :class="['bg-white', 'sm:py-4', 'pb-4', 'px-4', 'sm:pr-20', 'rounded-md',{'sm:w-6/12': type === 'comment','w-11/12': type === 'comment', 'mb-1': type === 'comment', 'sm:ml-9': type === 'subcomment', 'mt-3': type === 'subcomment'} ]" >
+    <article :class="['bg-white', 'sm:py-4', 'pb-4', 'px-4', 'sm:pr-20', 'rounded-md',{'sm:w-6/12': type === 'comment','w-11/12': type === 'comment', 'mb-2': type === 'comment', 'sm:ml-8': type === 'subcomment', 'mt-1': type === 'subcomment', 'mb-3': type === 'subcomment'} ]" >
       <div class="flex flex-col-reverse sm:flex-row w-full min-h-20 items-start" >
         <div class="flex w-full justify-between items-center" >
           <div class="flex sm:flex-col py-2 items-center mr-4 justify-between rounded-lg w-20 pl-2 pr-2 sm:w-10 sm:h-20 bg-slate-100" >
@@ -22,7 +22,7 @@
                 </div>
           </div>
         </div>
-        <div class="flex flex-col mt-4 sm:mt-0 min-h-20 items-start w-11/12 sm:min-w-full sm:pr-8" >
+        <div class="flex flex-col mt-4 sm:mt-0 min-h-20 items-start w-full sm:min-w-full sm:pr-8" >
           <div class="flex w-full mb-3 justify-between">
             <div class="flex items-center" >
               <img :src="data.user.image.png" class="h-7 mr-3" alt="">
@@ -39,9 +39,9 @@
               {{data.content}}
             </p>
           </div>
-          <div v-else class="w-max pl-4 flex flex-col items-end sm:min-w-full" >
+          <div v-else class="w-full pl-4 flex flex-col items-end sm:min-w-full" >
             <input v-model="updateComment" type="text"  class="w-full mb-2 h-20 mr-3 border-solid border pl-3 pb-10 rounded-md placeholder:text-slate-400 placeholder:text-xs border-slate-200" name="" id="">
-            <button @click="editComment" class="rounded-md bg-violet-600 hover:bg-slate-300  text-white w-20 h-9 text-xs font-medium " >UPDATE</button>
+            <button @click="editComment" class="rounded-md bg-violet-600 hover:bg-slate-300 mr-3  text-white w-20 h-9 text-xs font-medium " >UPDATE</button>
           </div>
         </div>
         <div v-if="!sm" :class="['flex', 'sm:mt-0', 'w-full', 'justify-end','mr-4', {'sm:w-1': type === 'comment', 'sm:w-2': type === 'subcomment'}]" >
@@ -60,7 +60,7 @@
             </div>
       </div>
     </article>
-    <div class="sm:w-3/6 w-11/12 pl-7 h-auto" >
+    <div class="sm:w-3/6 w-11/12 sm:pl-9 pl-0 h-auto" >
       <slot></slot>
     </div>
     <CommentInput v-if="reply === true" :replyingTo="data.user.username" :superCommentId="commentId" :commentId="data.id" :type="typeComment" />
